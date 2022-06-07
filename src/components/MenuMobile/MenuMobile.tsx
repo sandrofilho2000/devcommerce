@@ -1,7 +1,10 @@
 import { List } from 'phosphor-react';
+import React from 'react';
 import { SearchProduct } from '../SearchProduct/SearchProduct';
 
-export const MenuMobile = () => {
+type Props = {};
+
+export const MenuMobile: React.FC<Props> = () => {
   return (
     <nav className="flex gap-5 items-center sm:hidden">
       <SearchProduct />

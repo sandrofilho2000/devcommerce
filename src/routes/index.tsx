@@ -1,7 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Home } from '../pages/Home/Home';
 
-export const AppRoutes = () => {
+type Props = {};
+
+export const AppRoutes: React.FC<Props> = () => {
   return (
     <Routes>
       <Route path="/pagina-inicial" element={<Home />} />

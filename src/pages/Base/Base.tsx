@@ -1,5 +1,15 @@
-import { Header } from '../../components';
+import React, { ReactNode } from 'react';
+import { Header, MainContainer } from '../../components';
 
-export const Base = () => {
-  return <Header />;
+type Props = {
+  children: ReactNode;
+};
+
+export const Base: React.FC<Props> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <MainContainer>{children}</MainContainer>
+    </>
+  );
 };
