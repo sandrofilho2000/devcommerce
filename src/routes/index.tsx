@@ -6,9 +6,9 @@ type Props = {};
 export const AppRoutes: React.FC<Props> = () => {
   return (
     <Routes>
-      <Route path="/pagina-inicial" element={<Home />} />
+      <Route path="/" element={<Home />} />
 
-      <Route path="*" element={<Navigate to="/pagina-inicial" />} />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 };
