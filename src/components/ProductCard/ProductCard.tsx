@@ -25,10 +25,10 @@ export const ProductCard: React.FC<Props> = ({ title, price, image }) => {
         </Link>
 
         <div className="flex gap-4 items-center">
-          <p className="text-base md:text-lg tracking-tighter">
+          <p className="text-base md:text-lg whitespace-nowrap tracking-tighter">
             R$ {price.toFixed(2).replace('.', ',')}
           </p>
-          <p className="sm:text-base md:text-lg line-through tracking-tighter text-neutral-400">
+          <p className="sm:text-base md:text-lg whitespace-nowrap line-through tracking-tighter text-neutral-400">
             R$ {(price + Math.random() * 10).toFixed(2).replace('.', ',')}
           </p>
         </div>

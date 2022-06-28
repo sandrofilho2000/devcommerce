@@ -6,11 +6,11 @@ type Props = {};
 
 export const Menu: React.FC<Props> = () => (
   <nav className="gap-5 items-center hidden sm:flex">
-    <button className="p-2 bg-zing-800 rounded-md border-transparent  hover:bg-zinc-300 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-neutral-800">
+    <button className="p-2 bg-zing-800 rounded-md border-transparent whitespace-nowrap hover:bg-zinc-300 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-neutral-800">
       Entrar
     </button>
     |
-    <button className="p-2 bg-zing-800 rounded-md border-transparent  hover:bg-zinc-300 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-neutral-800">
+    <button className="p-2 bg-zing-800 rounded-md border-transparent whitespace-nowrap hover:bg-zinc-300 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-neutral-800">
       Criar Conta
     </button>
     <SearchProduct />
