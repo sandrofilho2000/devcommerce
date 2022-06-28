@@ -14,7 +14,7 @@ export const Header: React.FC<Props> = () => {
         <Link to="/pagina-inicial">
           <img className="max-w-xs w-8/12" src={LogoImg} alt="logo" />
         </Link>
-
+        
         <Menu />
         <MenuMobile />
       </div>
