@@ -1,14 +1,47 @@
-import React from 'react';
-import { ProductsContainer } from '../../components';
+import React, { KeyboardEvent, useEffect, useState } from 'react';
+import { Modal, ProductsContainer } from '../../components';
+import { api } from '../../services/api';
 import { Base } from '../Base/Base';
-import mock from './mock';
 
 type Props = {};
 
 export const Home: React.FC<Props> = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [hasAccount, setHasAccount] = useState(false);
+  const [allProductsData, setAllProductsData] = useState([]);
+
+  const allProductsHandler = async () => {
+    const allProduct = await api.get('/product-index-all');
+    const { data } = allProduct;
+    setAllProductsData(data);
+  };
+
+  useEffect(() => {
+    allProductsHandler();
+  }, []);
+
+  const setModal = () => {
+    setModalIsOpen(!modalIsOpen);
+  };
+
+  const handleHasAccount = (state: boolean) => {
+    setHasAccount(state);
+  };
+
   return (
-    <Base>
-      <ProductsContainer products={mock} />
-    </Base>
+    <>
+      <div className={`${modalIsOpen && 'blur-[2px]'}`}>
+        <Base setModal={setModal} handleHasAccount={handleHasAccount}>
+          <ProductsContainer products={allProductsData} />
+        </Base>
+      </div>
+      {modalIsOpen ? (
+        <Modal
+          setModal={setModal}
+          handleHasAccount={handleHasAccount}
+          hasAccount={hasAccount}
+        />
+      ) : null}
+    </>
   );
 };

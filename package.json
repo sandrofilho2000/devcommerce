@@ -9,9 +9,15 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@types/gapi.auth2": "^0.0.56",
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
+    "axios": "^0.27.2",
+    "gapi-script": "^1.2.0",
     "phosphor-react": "^1.4.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-google-login": "^5.2.2",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"

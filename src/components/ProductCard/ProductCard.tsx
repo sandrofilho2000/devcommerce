@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom';
 type Props = {
   title: string;
   price: number;
-  image: string;
+  images: {
+    url: string;
+    alt_text: string;
+  }[];
 };
 
-export const ProductCard: React.FC<Props> = ({ title, price, image }) => {
+export const ProductCard: React.FC<Props> = ({ title, price, images }) => {
   return (
     <div className="relative w-full h-full  max-w-[16.5rem] ">
       <button className="absolute top-3 right-3 border-solid border-2 rounded-md border-neutral-300 hover:bg-zinc-200 transition-colors focus:outline-none ring-0 focus:border-neutral-500 cursor-pointer">
@@ -16,7 +19,7 @@ export const ProductCard: React.FC<Props> = ({ title, price, image }) => {
       </button>
       <div className="bg-white rounded-2xl p-12">
         <Link to="">
-          <img src={image} alt={title} />
+          <img src={images ? images[0].url : ''} alt={title} />
         </Link>
       </div>
       <div className="p-1 flex flex-col">
